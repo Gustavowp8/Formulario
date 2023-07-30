@@ -15,7 +15,7 @@ namespace Formulario
         private bool Confirmar(string pergunta)
         {
             return MessageBox.Show(pergunta, "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
-        } /*7:22*/
+        } /*4:22*/
 
     }
 }
