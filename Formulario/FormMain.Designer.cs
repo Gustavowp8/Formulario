@@ -210,6 +210,7 @@
             cbxNacionalidade.Location = new Point(12, 211);
             cbxNacionalidade.Name = "cbxNacionalidade";
             cbxNacionalidade.Size = new Size(111, 23);
+            cbxNacionalidade.Sorted = true;
             cbxNacionalidade.TabIndex = 8;
             // 
             // mtbPlacaVeiculo
