@@ -56,6 +56,11 @@ namespace Formulario
 
         public static List<Cliente> Listagem { get; set; }
 
+        static Cliente()
+        {
+            Cliente.Listagem = new List<Cliente>();
+        }
+
         public static Cliente Inserir(Cliente cliente)
         {
             int codigo = Cliente.Listagem.Count > 0 ?

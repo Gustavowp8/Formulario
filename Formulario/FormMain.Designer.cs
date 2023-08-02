@@ -74,6 +74,7 @@
             cbxCliente.Name = "cbxCliente";
             cbxCliente.Size = new Size(291, 23);
             cbxCliente.TabIndex = 0;
+            cbxCliente.SelectedIndexChanged += cbxCliente_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -85,12 +86,14 @@
             // 
             // btnAlterar
             // 
+            btnAlterar.Enabled = false;
             btnAlterar.Image = (Image)resources.GetObject("btnAlterar.Image");
             btnAlterar.Location = new Point(309, 27);
             btnAlterar.Name = "btnAlterar";
             btnAlterar.Size = new Size(27, 23);
             btnAlterar.TabIndex = 1;
             btnAlterar.UseVisualStyleBackColor = true;
+            btnAlterar.Click += btnAlterar_Click;
             // 
             // btnNovo
             // 
@@ -100,6 +103,7 @@
             btnNovo.Size = new Size(27, 24);
             btnNovo.TabIndex = 2;
             btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.Click += btnNovo_Click;
             // 
             // label3
             // 
@@ -181,6 +185,7 @@
             // 
             nudRendaMensal.Increment = new decimal(new int[] { 500, 0, 0, 0 });
             nudRendaMensal.Location = new Point(135, 161);
+            nudRendaMensal.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             nudRendaMensal.Name = "nudRendaMensal";
             nudRendaMensal.Size = new Size(81, 23);
             nudRendaMensal.TabIndex = 7;
@@ -258,6 +263,7 @@
             btnSalvar.TabIndex = 12;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnCancelar
             // 
@@ -267,6 +273,7 @@
             btnCancelar.TabIndex = 13;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnFechar
             // 
@@ -276,6 +283,7 @@
             btnFechar.TabIndex = 14;
             btnFechar.Text = "Fechar";
             btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
             // 
             // FormMain
             // 
@@ -308,9 +316,11 @@
             Controls.Add(cbxCliente);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MinimizeBox = false;
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de clientes";
+            FormClosing += FormMain_FormClosing;
             ((System.ComponentModel.ISupportInitialize)nudRendaMensal).EndInit();
             ResumeLayout(false);
             PerformLayout();
